@@ -1,0 +1,29 @@
+﻿@model Survey_System.Models.Person
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">Kişi Düzenleme Sayfası</div>
+        <hr>
+        <form action="/Person/Edit" method="post">
+            <input type="hidden" name="Id" value="@Model.Id"/>
+            <div class="form-group">
+                <label for="input-1">Ad Soyad</label>
+                <input type="text" class="form-control" name="NameSurname" id="input-1" value="@Model.NameSurname" placeholder="Ad Soyad" maxlength="50" required>
+            </div>
+            <div class="form-group">
+                <label for="input-2">Code</label>
+                <input type="text" class="form-control" name="Code" id="input-2" value="@Model.Code" placeholder="Code" maxlength="10" required>
+            </div>
+            <div class="form-group">
+                <label for="input-3">Şifre</label>
+                <input type="password" class="form-control" name="Password" id="input-3" value="@Model.Password" placeholder="Şifre" maxlength="20" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-round btn-success shadow-success px-5"><i class="icon-lock"></i> Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>

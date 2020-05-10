@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">Soru Ekleme Sayfası</div>
+        <hr>
+        <form action="/Question/Create">
+            <div class="form-group">
+                <label for="input-1">Soruyu Giriniz</label>
+                <input type="text" class="form-control" name="QuestionLine" id="input-1" placeholder="Soruyu giriniz" maxlength="250" required>
+            </div>
+          
+            <div class="form-group">
+                <button type="submit" class="btn btn-round btn-success shadow-success px-5"><i class="icon-lock"></i> Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>
+
