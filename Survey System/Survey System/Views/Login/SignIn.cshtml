@@ -30,31 +30,35 @@
                         <img src="~/Content/assets/images/logo-icon.png" />
                     </div>
                     <div class="card-title text-uppercase text-center py-2 text-white">GİRİŞ YAPINIZ</div>
-                    <form class="color-form">
+                    <form class="color-form" action="/Login/SignIn" method="post">
                         <div class="form-group">
                             <div class="position-relative has-icon-left">
-                                <label for="exampleInputUsername" class="sr-only">Username</label>
-                                <input type="text" id="exampleInputUsername" class="form-control" placeholder="Username">
-                                <div class="form-control-position">
+                                <label for="exampleInputUsername" class="sr-only">Code</label>
+                                <input type="text" id="exampleInputUsername" name="Code" class="form-control" placeholder="Code" required>
+                                <div class="form-control-position" >
                                     <i class="icon-user"></i>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="position-relative has-icon-left">
-                                <label for="exampleInputPassword" class="sr-only">Password</label>
-                                <input type="password" id="exampleInputPassword" class="form-control" placeholder="Password">
+                                <label for="exampleInputPassword" class="sr-only">Şifre</label>
+                                <input type="password" id="exampleInputPassword" name="Password" class="form-control" placeholder="Şifre" required>
                                 <div class="form-control-position">
                                     <i class="icon-lock"></i>
                                 </div>
                             </div>
                         </div>
-                      
-
                         <div class="form-group">
-                            <button type="button" class="btn btn-danger btn-block waves-effect waves-light">GİRİŞ YAP </button>
+                            <button type="submit" class="btn btn-danger btn-block waves-effect waves-light">GİRİŞ YAP </button>
                         </div>
-                      
+                        @if (ViewBag.Error != null)
+                        {
+                            <div class="alert-message">
+                                <span class="btn btn-danger btn-block waves-effect waves-light"><strong>işlem Hatalı!</strong> @ViewBag.Error </span>
+                            </div>
+                        }
+
                     </form>
                 </div>
             </div>

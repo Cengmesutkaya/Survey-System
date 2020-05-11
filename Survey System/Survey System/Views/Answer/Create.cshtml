@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Survey_System.Models.Question>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">Anket cevaplama Sayfası</div>
+        <hr>
+        @using (Html.BeginForm("Create", "Answer"))
+        {
+            <div class="form-group">
+             @Html.DropDownList("Code", (SelectList)ViewBag.Person,"Lütfen Kişi Seçiniz",new {@class="form-control" })
+            </div>
+         
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-round btn-success shadow-success px-5"><i class="icon-lock"></i> Kaydet</button>
+            </div>
+        }
+    </div>
+</div>
