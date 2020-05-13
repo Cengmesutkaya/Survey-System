@@ -23,7 +23,7 @@ namespace Survey_System.Controllers
                 {
                     Session["Code"] = person.Code;
                     Session["NameSurname"] = person.NameSurname;
-                    return RedirectToAction("Index", "Person");
+                    return RedirectToAction("Create", "Answer");
                 }
                 else
                 {

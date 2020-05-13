@@ -1,4 +1,5 @@
-﻿using Survey_System.Utils;
+﻿using Survey_System.Models;
+using Survey_System.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Survey_System.Controllers
                                                where person.Code != Code
                                                select new SelectListItem
                                                {
-                                                   Text = person.NameSurname,
+                                                  Text = person.NameSurname,
                                                    Value = person.Code.ToString()
                                                }).ToList();
 
@@ -28,5 +29,12 @@ namespace Survey_System.Controllers
             var questionModel = db.Question.ToList();
             return View(questionModel);
         }
+
+        public String SendData(AnswerModel answerModel)
+        {
+            return "True";
+        }
+
+
     }
 }
