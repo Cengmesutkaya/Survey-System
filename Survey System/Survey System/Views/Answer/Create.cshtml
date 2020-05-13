@@ -35,6 +35,9 @@
                         var code = $('#Code').val();
                         formdata.set("Code", code);
 
+                        var namesurname = $('#Code :selected').text();
+                        formdata.set("NameSurname", namesurname);
+
                         var quesition = $('#Question_@item.Id').val();
                         formdata.set("Question", quesition);
 
