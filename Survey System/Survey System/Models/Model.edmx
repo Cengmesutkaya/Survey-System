@@ -40,6 +40,7 @@
           <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
           <Property Name="ModifyDate" Type="datetime" />
           <Property Name="ModifyBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsAdmin" Type="bit" />
         </EntityType>
         <EntityType Name="Question">
           <Key>
@@ -85,6 +86,23 @@
           <Property Name="Answer" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityContainer Name="SurveyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Answer" EntityType="Self.Answer" />
+          <EntitySet Name="AnswerLine" EntityType="Self.AnswerLine" />
+          <EntitySet Name="Question" EntityType="SurveyModel.Question" />
+          <EntitySet Name="Person" EntityType="SurveyModel.Person" />
+        </EntityContainer>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionLine" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Person">
           <Key>
             <PropertyRef Name="Id" />
@@ -97,23 +115,7 @@
           <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ModifyDate" Type="DateTime" Precision="3" />
           <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityContainer Name="SurveyEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Answer" EntityType="Self.Answer" />
-          <EntitySet Name="AnswerLine" EntityType="Self.AnswerLine" />
-          <EntitySet Name="Person" EntityType="Self.Person" />
-          <EntitySet Name="Question" EntityType="SurveyModel.Question" />
-        </EntityContainer>
-        <EntityType Name="Question">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="QuestionLine" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
-          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-          <Property Name="ModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAdmin" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -146,20 +148,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Person">
-            <EntityTypeMapping TypeName="SurveyModel.Person">
-              <MappingFragment StoreEntitySet="Person">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
-                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Question">
             <EntityTypeMapping TypeName="SurveyModel.Question">
               <MappingFragment StoreEntitySet="Question">
@@ -168,6 +156,21 @@
                 <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="QuestionLine" ColumnName="QuestionLine" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person">
+            <EntityTypeMapping TypeName="SurveyModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Constants\AnswerType.cs" />
     <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -375,10 +376,10 @@
     <Content Include="Views\Question\Create.cshtml" />
     <Content Include="Views\Question\Edit.cshtml" />
     <Content Include="Views\Answer\Create.cshtml" />
+    <Content Include="Views\Answer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

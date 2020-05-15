@@ -27,7 +27,7 @@ namespace Survey_System.Models
     
         public virtual DbSet<Answer> Answer { get; set; }
         public virtual DbSet<AnswerLine> AnswerLine { get; set; }
-        public virtual DbSet<Person> Person { get; set; }
         public virtual DbSet<Question> Question { get; set; }
+        public virtual DbSet<Person> Person { get; set; }
     }
 }

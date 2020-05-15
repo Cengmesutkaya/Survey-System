@@ -22,5 +22,6 @@ namespace Survey_System.Models
         public string CreateBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
         public string ModifyBy { get; set; }
+        public Nullable<bool> IsAdmin { get; set; }
     }
 }

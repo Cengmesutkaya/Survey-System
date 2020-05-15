@@ -19,10 +19,18 @@
             <div class="form-group">
                 <label for="input-3">Şifre</label>
                 <input type="password" class="form-control" name="Password" id="input-3" placeholder="Şifre" maxlength="20" required>
-            </div>            
-            <div class="form-group">
-                <button type="submit" class="btn btn-round btn-success shadow-success px-5"><i class="icon-lock"></i> Kaydet</button>
             </div>
+            <label for="input-3">Admin mi?</label>
+            <div class="icheck-material-primary icheck-inline">
+                <input type="radio" id="1" name="Answer" value="@Survey_System.Constants.AnswerType.Yes">
+                <label for="1">@Survey_System.Constants.AnswerType.Yes</label>
+
+                <input type="radio" id="2" name="Answer" value="@Survey_System.Constants.AnswerType.No" checked>
+                <label for="2">@Survey_System.Constants.AnswerType.No</label>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-round btn-success shadow-success px-5"><i class="icon-lock"></i> Kaydet</button>
+        </div>
         </form>
     </div>
 </div>
