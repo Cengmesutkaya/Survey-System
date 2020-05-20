@@ -377,6 +377,7 @@
     <Content Include="Views\Question\Edit.cshtml" />
     <Content Include="Views\Answer\Create.cshtml" />
     <Content Include="Views\Answer\Index.cshtml" />
+    <Content Include="Views\Answer\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -415,7 +416,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51760</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51760/</IISUrl>
+          <IISUrl>http://localhost:51799/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:51799/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
